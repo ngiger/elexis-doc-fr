@@ -1,0 +1,3 @@
+[submodule "elexis-uitest"]
+	path = elexis-uitest
+	url = git@github.com:elexis/elexis-uitest.git
