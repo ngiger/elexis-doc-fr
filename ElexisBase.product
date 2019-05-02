@@ -62,6 +62,8 @@
       <feature id="ch.elexis.omnivore.feature" installMode="root"/>
       <feature id="ch.elexis.base.ch.feature" installMode="root"/>
       <feature id="at.medevit.elexis.impfplan.feature" installMode="root"/>
+      <feature id="ch.elexis.connect.afinion.feature" installMode="root"/>
+      <feature id="ch.elexis.laborimport.viollier.v2.feature" installMode="root"/>
    </features>
 
    <configurations>

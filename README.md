@@ -1,6 +1,7 @@
-# elexis-doc-fr
+# elexis-doc-fr: A customized Elexis for generating the images used by the french docu Premiers_pas_avec_Elexis
 
 Author: Niklaus Giger <niklaus.giger@member.fsf.org>
+
 Date: May 01, 2019
 
 This a utility project by Niklaus Giger to ease creating the documentation for the french version of Elexis.
@@ -13,6 +14,8 @@ Besides the elexis-3-core it contains the following features
 * Impfplan
 * Omnivore
 * Hilotec ODF Textplugin (This is Elexis 3.8, where it works. Not 3.7 where it has problems)
+* Afinion AS100 laboratroy equipment
+* External Viollier laboratory
 
 ## Requirements
 
