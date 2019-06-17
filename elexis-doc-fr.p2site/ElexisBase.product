@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Elexis OpenSource" uid="ch.elexis.base.application.ElexisBaseApp" id="ch.elexis.base.application.product" application="ch.elexis.core.application.ElexisApp" version="3.8.0.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="Elexis OpenSource" uid="ch.elexis.doc.fr.ElexisFrApp" id="ch.elexis.doc.fr.application.product" application="ch.elexis.core.application.ElexisApp" version="3.8.0.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="rsc/elexislogo2.png"/>
       <text>
          Elexis 3.8 With recommended features - www.elexis.info
+         French versions used to create the Elexis Wiki-Doc
       </text>
    </aboutInfo>
 
@@ -14,7 +15,7 @@
    </configIni>
 
    <launcherArgs>
-      <programArgsLin>--launcher.GTK_version 2 -nl fr_CH
+     <programArgsLin>-clearPersistedState --launcher.GTK_version 2 -nl fr_CH >
       </programArgsLin>
       <vmArgs>-Xms256m -Xmx1024m -Dfile.encoding=utf-8
       </vmArgs>
@@ -64,6 +65,15 @@
       <feature id="at.medevit.elexis.impfplan.feature" installMode="root"/>
       <feature id="ch.elexis.connect.afinion.feature" installMode="root"/>
       <feature id="ch.elexis.laborimport.viollier.v2.feature" installMode="root"/>
+      <feature id="ch.elexis.icpc.fire.feature" installMode="root"/>
+      <feature id="at.medevit.elexis.inbox.feature" installMode="root"/>
+      <feature id="ch.elexis.jre.feature"  installMode="root"/>
+      <!-- eventuel ??
+        ch.elexis.connect.reflotron.v2.feature
+        ch.elexis.laborimport.bioanalytica.feature
+        ch.elexis.privatrechnung.feature
+        ch.berchtold.privatrechnung.feature
+      -->
    </features>
 
    <configurations>

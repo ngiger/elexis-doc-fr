@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>ch.ngiger.doc</groupId>
+    <artifactId>jre.bundles</artifactId>
+    <version>8.0.212</version> <!-- aka JDK version -->
+  </parent>
+
+  <artifactId>ch.elexis.jre.macosx.x86_64</artifactId>
+  <packaging>eclipse-plugin</packaging>
+
+  <properties>
+    <download.filePostfix>macosx_x64.zip</download.filePostfix>
+    <download.unzippedFolderPostfix>macosx_x64</download.unzippedFolderPostfix>
+    <download.md5>a7bb03fc6472374a653e7518f684e0ac</download.md5>
+    <jre.folder>Contents/Home</jre.folder>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <configuration>
+          <resolver>p2</resolver>
+          <pomDependencies>consider</pomDependencies>
+          <environments>
+            <environment>
+              <os>macosx</os>
+              <ws>cocoa</ws>
+              <arch>x86_64</arch>
+            </environment>
+          </environments>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.googlecode.maven-download-plugin</groupId>
+        <artifactId>download-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

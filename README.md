@@ -44,3 +44,23 @@ This project also illustrates how easy it is to create a new customized Elexis c
 * The elexis-3-core
 * Some additional features from the elexis-3-base repository (see the list in the features element of ElexisBase.product
 * You want other branches or repositories adapt the repositories element in the pom.xml
+
+### How we included the OpenJDK
+
+We got the inspiration from  https://github.com/buchen/bundled-jre.
+
+From a license perspective, we wanted to use the [OpenJDK](http://openjdk.java.net/) for Elexis.
+
+The OpenJDK itself is not providing binaries for all platforms, but thankfully Azul does with [Zulu](https://www.azul.com/downloads/zulu/).
+
+#### The Idea
+
+In short, the idea is outlined in the blog post [Including a JRE in a Tycho build](https://codeiseasy.wordpress.com/2012/07/31/including-a-jre-in-a-tycho-build/).
+
+The [Tycho](https://www.eclipse.org/tycho/) build in this repository does:
+
+* Download the JDK builds from [Zulu](https://www.azul.com/downloads/zulu/)
+* Create bundles with the appropriate ```setJvm``` [p2 Touchpoint Instructions](http://help.eclipse.org/oxygen/index.jsp?topic=/org.eclipse.platform.doc.isv/guide/p2_actions_touchpoints.html)
+* Create a feature with all JRE bundles and the main Elexis features
+* Create the Elexis3 application with self-update functionality to test the packaged JRE
+

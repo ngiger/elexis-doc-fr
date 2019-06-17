@@ -1,17 +1,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>ch.elexis.base</groupId>
-	<artifactId>base-application</artifactId>
-	<version>3.8.0-SNAPSHOT</version>
-	<name>Elexis-Base-Application</name>
-	<packaging>eclipse-repository</packaging>
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ch.ngiger.doc</groupId>
+  <artifactId>elexis-doc-fr</artifactId>
+  <version>3.8.0-SNAPSHOT</version>
+  <name>Elexis-Doc-Fr-Application</name>
+  <packaging>pom</packaging>
   <properties>
-    <tycho.version>1.0.0</tycho.version>
+    <tycho.version>1.2.0</tycho.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <tycho-groupid>org.eclipse.tycho</tycho-groupid>
     <git.target.branch>master</git.target.branch>
     <git.core.branch>${git.target.branch}</git.core.branch>
+    <jarsigner.plugin.version>3.0.0</jarsigner.plugin.version>
   </properties>
     <repositories>
       <repository>
@@ -29,48 +30,13 @@
         <layout>p2</layout>
       </repository>
     </repositories>
+  <modules>
+    <module>ch.elexis.jre.feature</module>
+    <module>elexis-doc-fr.p2site</module>
+    <module>jre.bundles</module>
+  </modules>
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.eclipse.tycho </groupId>
-				<artifactId>tycho-p2-repository-plugin</artifactId>
-				<configuration>
-					<includeAllDependencies>true</includeAllDependencies>
-					<profileProperties>
-						<macosx-bundled>true</macosx-bundled>
-					</profileProperties>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.eclipse.tycho </groupId>
-				<artifactId>tycho-p2-director-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>materialize-products</id>
-						<goals>
-							<goal>materialize-products</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>archive-products</id>
-						<goals>
-							<goal>archive-products</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<products>
-						<product>
-							<id>ch.elexis.base.application.ElexisBaseApp</id>
-							<rootFolder />
-							<rootFolders>
-								<macosx>Elexis3.app</macosx>
-								<win32 />
-							</rootFolders>
-						</product>
-					</products>
-				</configuration>
-			</plugin>
      <plugin>
       <groupId>org.eclipse.tycho</groupId>
       <artifactId>tycho-maven-plugin</artifactId>
@@ -101,7 +67,12 @@
             <ws>gtk</ws>
             <arch>x86_64</arch>
           </environment>
-          <!--environment>
+         <environment>
+            <os>macosx</os>
+            <ws>cocoa</ws>
+            <arch>x86_64</arch>
+          </environment>
+          <environment>
             <os>win32</os>
             <ws>win32</ws>
             <arch>x86</arch>
@@ -111,12 +82,7 @@
             <ws>win32</ws>
             <arch>x86_64</arch>
           </environment>
-          <environment>
-            <os>macosx</os>
-            <ws>cocoa</ws>
-            <arch>x86_64</arch>
-          </environment-->
-        </environments>
+         </environments>
       </configuration>
     </plugin>
 </plugins>
